@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
 
 RUN apt-get -q update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -yq build-essential cmake cmake-curses-gui libeigen3-dev libxml2-dev coinor-libipopt-dev qtbase5-dev qtdeclarative5-dev qtmultimedia5-dev qml-module-qtquick2 qml-module-qtquick-window2 qml-module-qtmultimedia qml-module-qtquick-dialogs qml-module-qtquick-controls qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings libassimp-dev libmatio-dev git-lfs protobuf-compiler libprotobuf-dev libasio-dev libpcl-dev lsb-release libpcap-dev && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -yq bash-completion build-essential cmake cmake-curses-gui coinor-libipopt-dev freeglut3-dev git libace-dev libboost-filesystem-dev libboost-system-dev libboost-thread-dev libdc1394-22-dev libedit-dev libeigen3-dev libgsl0-dev libjpeg-dev liblua5.1-dev libode-dev libopencv-dev libsdl1.2-dev libtinyxml-dev libv4l-dev libxml2-dev lua5.1 portaudio19-dev qml-module-qt-labs-folderlistmodel qml-module-qt-labs-settings qml-module-qtmultimedia qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-window2 qml-module-qtquick2 qtbase5-dev qtdeclarative5-dev qtmultimedia5-dev swig libmatio-dev libirrlicht-dev libspdlog-dev libblas-dev liblapack-dev && \
     rm -rf /var/lib/apt/lists/*
