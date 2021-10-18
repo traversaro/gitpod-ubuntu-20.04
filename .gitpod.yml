@@ -1,12 +1,10 @@
-image:
-  file: .gitpod.Dockerfile
-
-# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
+image: ghcr.io/traversaro/gitpod-ubuntu-20.04
 ports:
-  - port: 3000
-    onOpen: open-preview
-
-# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+- port: 6080
+  onOpen: notify
+- port: 10000-20000
+  onOpen: ignore
+workspaceLocation: "."
 tasks:
-  - init: echo 'init script' # runs during prebuild
-    command: echo 'start script'
+- command: start-vnc-session.sh
+- command: gp await-port 6080 && gp preview $(gp url 6080)
