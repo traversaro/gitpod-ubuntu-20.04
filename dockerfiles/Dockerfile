@@ -56,7 +56,7 @@ RUN git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prom
 # Set up .bashrc
 WORKDIR /home/gitpod
 RUN echo "GIT_PROMPT_ONLY_IN_REPO=1" >> ~/.bashrc && \
-    echo "source \${HOME}/.bash-git-prompt/gitprompt.sh" >> ~/.bashrc && \
+    echo "source \${HOME}/.bash-git-prompt/gitprompt.sh" >> ~/.bashrc
 
 # Create the Desktop dir
 RUN mkdir -p /home/gitpod/Desktop
