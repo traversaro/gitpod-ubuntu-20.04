@@ -6,7 +6,7 @@ The VNC support is inspired from the https://github.com/robotology/icub-gazebo-g
 ## Instructions  
 Click on the following badge to open the GitPod image:
 
-[![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/traversaro/gitpod-ubuntu-20.04)
+[![Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer)
 
 ## How to customize this structure in a new repo
 
