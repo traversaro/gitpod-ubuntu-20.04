@@ -14,9 +14,4 @@ workspaceLocation: "."
 tasks:
 - command: start-vnc-session.sh
 - command: gp await-port 6080 && gp preview $(gp url 6080)
-vscode:
-  extensions:
-    - adelphes.android-dev-ext@0.8.0:z3IVaDRzKS8IeFWrhyaPAA==
-    - mpotthoff.vscode-android-webview-debug@1.1.1:TY2OLKxxIJSs2lt3TgOpjw==
-    - DiemasMichiels.emulate@1.3.0:sXCoQONS3kXpSTBuMnxkyQ==
-    - fwcd.kotlin@0.2.10:kX3nrW3fv/LjU/QSQ41zYA==
+
