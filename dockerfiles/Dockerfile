@@ -1,5 +1,5 @@
-FROM ubuntu:20.04
-LABEL org.opencontainers.image.title="Traversaro's Ubuntu 20.04 blank image with VNC support"
+FROM ubuntu:22.04
+LABEL org.opencontainers.image.title="Widyagama ANDROID Ubuntu 20.04 blank image with VNC support"
 LABEL org.opencontainers.image.description="Infrastructure for running grasping experiments with the iCub humanoid in Gazebo"
 LABEL org.opencontainers.image.source="https://github.com/traversaro/gitpod-ubuntu-20.04"
 LABEL org.opencontainers.image.authors="Silvio Traversaro <silvio.traversaro@iit.it>"
@@ -68,19 +68,18 @@ USER root
 COPY start-vnc-session.sh /usr/bin/start-vnc-session.sh
 RUN chmod +x /usr/bin/start-vnc-session.sh && \
     dos2unix /usr/bin/start-vnc-session.sh
+    
+COPY android.sh /usr/bin/android.sh
+RUN chmod +x /usr/bin/android.sh && \
+    dos2unix /usr/bin/android.sh
+    
+COPY chrome.sh /usr/bin/chrome.sh
+RUN chmod +x /usr/bin/chrome.sh && \
+    dos2unix /usr/bin/chrome.sh
 
 # Manage ports
 EXPOSE 5901 5900 6080 6942 10000/tcp 10000/udp 35900
 
-##INSTALL ANDROID STUDIO
-RUN add-apt-repository ppa:maarten-fonville/android-studio
-
-RUN apt-get update
-
-RUN apt-get install android-sdk lib32stdc++6 android-studio android-sdk-build-tools android-sdk android-sdk-platform-23 --no-install-recommends --yes \
-        && apt-get clean
-#         && rm -rf /var/lib/apt/lists/*
-##================
 # Clean up unnecessary installation products
 RUN rm -Rf /var/lib/apt/lists/*
 
