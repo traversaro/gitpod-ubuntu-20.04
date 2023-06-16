@@ -70,17 +70,14 @@ RUN chmod +x /usr/bin/start-vnc-session.sh && \
     dos2unix /usr/bin/start-vnc-session.sh
 
 # Manage ports
-EXPOSE 5901 6080 10000/tcp 10000/udp
+EXPOSE 5901 5900 6080 6942 10000/tcp 10000/udp 35900
 
 ##INSTALL ANDROID STUDIO
-RUN add-apt-repository ppa:maarten-fonville/android-studio && \
-    apt-get update && \
-    apt-get install android-sdk \
-        lib32stdc++6 \
-        android-studio \
-        android-sdk-build-tools \
-        android-sdk \
-        android-sdk-platform-23 --no-install-recommends --yes \
+RUN add-apt-repository ppa:maarten-fonville/android-studio
+
+RUN apt-get update
+
+RUN apt-get install android-sdk lib32stdc++6 android-studio android-sdk-build-tools android-sdk android-sdk-platform-23 --no-install-recommends --yes \
         && apt-get clean
 #         && rm -rf /var/lib/apt/lists/*
 ##================
