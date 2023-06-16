@@ -1,4 +1,4 @@
-image: ghcr.io/traversaro/gitpod-ubuntu-20.04:latest
+image: ghcr.io/traversaro/gitpod-ubuntu-22.04:latest
 ports:
 - port: 6080
   onOpen: notify
@@ -13,5 +13,7 @@ ports:
 workspaceLocation: "."
 tasks:
 - command: start-vnc-session.sh
+- command: android.sh
+- command: chrome.sh
 - command: gp await-port 6080 && gp preview $(gp url 6080)
 
