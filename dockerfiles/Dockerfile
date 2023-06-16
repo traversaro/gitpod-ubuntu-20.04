@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:23.04
 LABEL org.opencontainers.image.title="Widyagama ANDROID Ubuntu 20.04 blank image with VNC support"
 LABEL org.opencontainers.image.description="Infrastructure for running grasping experiments with the iCub humanoid in Gazebo"
 LABEL org.opencontainers.image.source="https://github.com/traversaro/gitpod-ubuntu-20.04"
